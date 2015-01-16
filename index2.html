@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Quizzy</title>
+</head>
+<body>
+
+  <center>
+  <h2>This. Is. Quizzy.</h2>
+  <div id="question"></div>
+  <center>
+
+  <script src="vendor/mithril.js" type = "text/javascript"></script>
+
+  <script src="quiz-presenter-mithril.js" type = "text/javascript"></script>
+
+  <script type="text/javascript">
+
+  Quiz.vm.questions([
+    {title: "Friends", text: "Who had Ross's baby?", choices: ["Monica", "Phoebe", "Rachel"], answer: 2},
+    {title: "Headlines", text: "Where is Charlie Abdou?", choices: ["London", "Paris", "Nice", "Amsterdam"], answer: 1},
+    {title: "Pokemon", text: "Who beats Charmander?", choices: ["Squirtle", "Bulbasaur"], answer: 0},
+    {title: "Geography", text: "What is the best city in Texas?", choices: ["San Antonio", "Austin", "Dallas", "Houston"], answer: 1},
+    {title: "SSB", text: "Who is David's favorite?", choices: ["Capt Falcon", "Samus", "Link"], answer: 0},
+    {title: "SSB2", text: "Who is Gilbert's favorite?", choices: ["Link", "Kirby", "Jigglypuff"], answer: 2}
+  ])
+
+    var appDiv = document.getElementById('question')
+  
+    m.module(appDiv, {
+      controller: Quiz.controller,
+      view: Quiz.view
+    })
+
+  </script>
+
+</body>
+</html>
